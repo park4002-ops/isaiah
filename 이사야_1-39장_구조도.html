@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이사야 1–39장 구조도 — 순천서남교회</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    background: #f4f1ec;
+    color: #2a2a2a;
+    padding: 28px 18px 60px;
+    line-height: 1.65;
+  }
+
+  /* ── 헤더 ── */
+  .page-header { text-align: center; margin-bottom: 26px; }
+  .page-header h1 {
+    font-size: 1.5rem; font-weight: 800;
+    color: #2c1a08; letter-spacing: -0.5px; margin-bottom: 4px;
+  }
+  .page-header .sub { font-size: 0.82rem; color: #8a7560; }
+
+  /* ── 큰 그림 ── */
+  .overview {
+    background: linear-gradient(135deg, #2c1a08, #6b3e14);
+    color: #fdf5e8; border-radius: 14px;
+    padding: 20px 22px; margin-bottom: 22px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(44,26,8,0.25);
+  }
+  .overview .ov-label { font-size: 0.72rem; opacity: 0.72; letter-spacing: 1px; margin-bottom: 6px; }
+  .overview .ov-title { font-size: 1.1rem; font-weight: 800; line-height: 1.4; margin-bottom: 8px; }
+  .overview .ov-desc { font-size: 0.8rem; opacity: 0.88; line-height: 1.65; }
+
+  /* ── 3등분 카드 ── */
+  .three-col {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 9px; margin-bottom: 20px;
+  }
+  .part-card {
+    border-radius: 11px; padding: 13px 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .part-card .pc-range { font-size: 0.68rem; font-weight: 700; opacity: 0.75; margin-bottom: 4px; }
+  .part-card .pc-title { font-size: 0.88rem; font-weight: 800; line-height: 1.3; margin-bottom: 4px; }
+  .part-card .pc-bg { font-size: 0.72rem; opacity: 0.82; line-height: 1.5; }
+  .p1 { background: #7b2d0a; color: #fdf0e5; }
+  .p2 { background: #1a5c7a; color: #e5f4fd; }
+  .p3 { background: #2a6644; color: #e5fdf0; }
+
+  /* ── 핵심 안내 박스 ── */
+  .key-box {
+    background: #fffbe6; border: 2px solid #d4a820;
+    border-radius: 12px; padding: 14px 18px;
+    margin-bottom: 22px; font-size: 0.84rem; color: #4a3800;
+    line-height: 1.65;
+  }
+  .key-box strong { display: block; font-size: 0.9rem; color: #2e2200; margin-bottom: 6px; }
+
+  /* ── 시대 배경 ── */
+  .era-row {
+    display: flex; gap: 9px; margin-bottom: 22px; overflow-x: auto; padding-bottom: 4px;
+  }
+  .era-card {
+    flex: 1; min-width: 130px;
+    border-radius: 10px; padding: 12px 12px;
+    background: white; box-shadow: 0 1px 5px rgba(0,0,0,0.08);
+    border-top: 4px solid;
+  }
+  .era-card .ec-empire { font-size: 0.75rem; font-weight: 800; margin-bottom: 3px; }
+  .era-card .ec-event { font-size: 0.78rem; color: #444; line-height: 1.5; }
+  .era-card .ec-tag {
+    display: inline-block; font-size: 0.65rem; border-radius: 4px;
+    padding: 2px 7px; margin-top: 5px; font-weight: 700;
+  }
+
+  /* ── 섹션 블록 ── */
+  .section {
+    margin-bottom: 18px; border-radius: 13px;
+    overflow: hidden; box-shadow: 0 3px 10px rgba(0,0,0,0.09);
+  }
+  .section-header {
+    display: flex; align-items: center;
+    padding: 13px 17px; gap: 10px;
+  }
+  .sh-badge {
+    background: rgba(255,255,255,0.25); border-radius: 7px;
+    padding: 4px 10px; font-size: 0.72rem; font-weight: 800; white-space: nowrap;
+  }
+  .sh-title { font-size: 0.95rem; font-weight: 800; flex: 1; line-height: 1.3; }
+  .sh-keyword {
+    font-size: 0.7rem; background: rgba(255,255,255,0.2);
+    border-radius: 20px; padding: 3px 10px; white-space: nowrap;
+  }
+  .section-body { background: white; padding: 13px 17px; }
+
+  /* ── 유닛 ── */
+  .unit {
+    display: flex; align-items: flex-start;
+    gap: 10px; padding: 9px 0;
+    border-bottom: 1px solid #f0ece4;
+  }
+  .unit:last-child { border-bottom: none; }
+  .unit-ref {
+    font-size: 0.7rem; color: #9a7850; white-space: nowrap;
+    min-width: 64px; padding-top: 2px; font-weight: 700;
+  }
+  .unit-content {}
+  .unit-title { font-size: 0.88rem; font-weight: 700; color: #1e1e1e; margin-bottom: 2px; }
+  .unit-note { font-size: 0.76rem; color: #5a5040; line-height: 1.55; }
+
+  /* ── 인사이트 박스 ── */
+  .insight {
+    background: #f5f0ff; border-left: 3px solid #7744cc;
+    border-radius: 0 8px 8px 0;
+    padding: 7px 11px; font-size: 0.76rem; color: #442288;
+    margin-top: 6px; line-height: 1.55;
+  }
+  .insight::before { content: "💡 "; font-weight: 700; }
+
+  /* ── 태그 ── */
+  .tag {
+    display: inline-block; font-size: 0.67rem;
+    border-radius: 4px; padding: 1px 7px;
+    margin-left: 6px; vertical-align: middle; font-weight: 700;
+  }
+  .tag-j { background: #ffe8d6; color: #aa3300; }   /* 심판 */
+  .tag-h { background: #e8f5e9; color: #1a6632; }   /* 소망 */
+  .tag-hist { background: #e8f0ff; color: #1a3388; } /* 역사 */
+
+  /* ── 섹션 색상 ── */
+  .c1 { background: linear-gradient(90deg, #5c2a0a, #8b4010); color: #fdf0e5; }
+  .c2 { background: linear-gradient(90deg, #4a2268, #7a3aa0); color: #f8eeff; }
+  .c3 { background: linear-gradient(90deg, #1a4a7a, #2a70aa); color: #e5f2ff; }
+  .c4 { background: linear-gradient(90deg, #3a5e10, #5a8c20); color: #edf8e0; }
+  .c5 { background: linear-gradient(90deg, #7a3010, #b04818); color: #fff0e5; }
+
+  /* ── 하나님의 이름 섹션 ── */
+  .name-box {
+    background: white; border-radius: 13px;
+    padding: 16px 18px; margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-top: 4px solid #8b4010;
+  }
+  .name-box h3 { font-size: 0.92rem; font-weight: 800; color: #5c2a0a; margin-bottom: 12px; }
+  .name-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .name-card {
+    background: #fdf5ec; border-radius: 10px;
+    padding: 12px 13px; border-left: 4px solid;
+  }
+  .name-card .nc-name { font-size: 0.85rem; font-weight: 800; margin-bottom: 4px; }
+  .name-card .nc-desc { font-size: 0.76rem; color: #4a3820; line-height: 1.55; }
+
+  /* ── 읽기 원칙 ── */
+  .principle-box {
+    background: white; border-radius: 13px;
+    padding: 16px 18px; margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-top: 4px solid #c0320a;
+  }
+  .principle-box h3 { font-size: 0.92rem; font-weight: 800; color: #7a2a00; margin-bottom: 12px; }
+  .pr-item {
+    display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start;
+  }
+  .pr-num {
+    background: #c0320a; color: white;
+    border-radius: 50%; width: 22px; height: 22px;
+    font-size: 0.72rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .pr-text { font-size: 0.82rem; color: #333; line-height: 1.55; }
+  .pr-text b { color: #8b2000; }
+
+  .footnote {
+    margin-top: 28px; font-size: 0.72rem; color: #aaa;
+    text-align: center; border-top: 1px solid #ddd; padding-top: 16px;
+  }
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<div class="page-header">
+  <h1>📜 이사야 1–39장 구조도</h1>
+  <p class="sub">순천서남교회 말씀 묵상 공동체</p>
+</div>
+
+<!-- 큰 그림 -->
+<div class="overview">
+  <div class="ov-label">이사야서를 읽기 전에 먼저 알아야 할 것</div>
+  <div class="ov-title">하나님을 의지하지 않는 백성을 향한<br>만군의 여호와의 심판과 초대</div>
+  <div class="ov-desc">
+    이사야서 전체 66장 중 1–39장은 <b>아시리아 제국</b>이 팽창하던 시대를 배경으로 한다.<br>
+    유다와 예루살렘이 하나님이 아닌 다른 대상을 의지하는 것을 향해<br>
+    하나님은 정의와 공의를 요구하시며, 심판과 회복을 함께 선언하신다.
+  </div>
+</div>
+
+<!-- 이사야서 3등분 -->
+<div class="three-col">
+  <div class="part-card p1">
+    <div class="pc-range">1 – 39장</div>
+    <div class="pc-title">심판</div>
+    <div class="pc-bg">아시리아 팽창기<br>북이스라엘 멸망<br>남유다 위기</div>
+  </div>
+  <div class="part-card p2">
+    <div class="pc-range">40 – 55장</div>
+    <div class="pc-title">회복</div>
+    <div class="pc-bg">바벨론 포로기<br>위로와 귀환의<br>약속</div>
+  </div>
+  <div class="part-card p3">
+    <div class="pc-range">56 – 66장</div>
+    <div class="pc-title">새 창조</div>
+    <div class="pc-bg">페르시아 귀환기<br>새 예루살렘<br>종말적 비전</div>
+  </div>
+</div>
+
+<!-- 예언 읽기의 핵심 원칙 -->
+<div class="key-box">
+  <strong>🔑 예언서를 읽는 핵심 원칙</strong>
+  예언은 <b>미래 예측</b>이 아니라 <b>동시대를 향한 하나님의 말씀</b>이다. 이사야의 메시지는 일차적으로
+  그와 함께 살았던 남유다 백성을 향한 하나님의 직접적인 호소였다. 다만 하나님의 말씀의 신비는,
+  그 당대의 메시지가 시간을 넘어 먼 미래에도 살아 역사한다는 것이다.
+  이사야서를 읽을 때, <b>먼저 그 시대 사람들에게 전해진 말씀을 바탕으로</b> 오늘 우리의 자리에 적용해야 한다.
+</div>
+
+<!-- 시대 배경 -->
+<div class="era-row">
+  <div class="era-card" style="border-color:#8b3010;">
+    <div class="ec-empire" style="color:#8b3010;">🏛 앗수르(아시리아)</div>
+    <div class="ec-event">제국 팽창 → 북이스라엘 멸망 (BC 722년). 남유다도 심한 압박 받음.</div>
+    <div class="ec-tag" style="background:#ffe8d6;color:#8b3010;">1–39장 배경</div>
+  </div>
+  <div class="era-card" style="border-color:#1a5c7a;">
+    <div class="ec-empire" style="color:#1a5c7a;">🏛 바벨론</div>
+    <div class="ec-event">앗수르 쇠퇴 후 등장. 남유다 멸망 (BC 586년). 포로 생활 시작.</div>
+    <div class="ec-tag" style="background:#e5f2ff;color:#1a5c7a;">40–55장 배경</div>
+  </div>
+  <div class="era-card" style="border-color:#2a6644;">
+    <div class="ec-empire" style="color:#2a6644;">🏛 페르시아(바사)</div>
+    <div class="ec-event">바벨론 멸망 후 등장. 포로들을 예루살렘으로 귀환시키고 성전 재건 허용.</div>
+    <div class="ec-tag" style="background:#e5fdf0;color:#2a6644;">56–66장 배경</div>
+  </div>
+</div>
+
+<!-- ===== 단락별 구조 ===== -->
+
+<!-- 1–5장 -->
+<div class="section">
+  <div class="section-header c1">
+    <span class="sh-badge">1–5장</span>
+    <span class="sh-title">하늘 법정에서의 기소 — 유다와 예루살렘을 향하여</span>
+    <span class="sh-keyword">정의와 공의</span>
+  </div>
+  <div class="section-body">
+    <div class="unit">
+      <span class="unit-ref">1장</span>
+      <div class="unit-content">
+        <div class="unit-title">서론: 유다를 향한 기소장 <span class="tag tag-j">심판</span></div>
+        <div class="unit-note">하나님이 하늘 법정의 재판장으로서 유다의 죄목들을 열거하신다. 제사는 드리지만 삶이 없는 형식적 신앙, 사회적 불의, 하나님 외면이 핵심 고발 내용이다. "너희가 즐겨 순종하면 땅의 좋은 것을 먹을 것이요…" (1:19) — 심판 안에 이미 돌아올 길이 열려 있다.</div>
+        <div class="insight">1장은 이사야서 전체의 서문이자 '예고편'이다. 이어질 모든 내용이 1장 안에 씨앗처럼 담겨 있다.</div>
+      </div>
+    </div>
+    <div class="unit">
+      <span class="unit-ref">2–4장</span>
+      <div class="unit-content">
+        <div class="unit-title">예루살렘의 비전과 현실의 간극 <span class="tag tag-j">심판</span></div>
+        <div class="unit-note">2:2–4 — 이사야가 본 비전: 열방이 시온으로 올라와 하나님의 말씀을 배우는 영광스러운 미래. 그러나 현실의 예루살렘은 우상숭배(2:8), 하나님을 의지하지 않음(3:1–7), 지도자들의 부패(3:14–15)로 가득하다. 비전과 현실의 극명한 대비가 구조의 핵심이다.</div>
+        <div class="insight">2:2–4의 '비전'과 2:5–4:1의 '현실'이 샌드위치 구조를 이룬다. 하나님이 원하시는 세상과 지금의 현실을 대조하여 회개를 촉구한다.</div>
+      </div>
+    </div>
+    <div class="unit">
+      <span class="unit-ref">5장</span>
+      <div class="unit-content">
+        <div class="unit-title">포도원의 노래 — 하나님의 탄식 <span class="tag tag-j">심판</span></div>
+        <div class="unit-note">포도원(이스라엘)을 정성껏 가꾸셨지만 들포도(독성 있는 열매)만 열렸다. 하나님이 원하신 열매는 단 두 가지 — 「미쉬파트」(정의)와 「체다카」(공의). 5:8–23 — 여섯 가지 '화 있을진저(히: 호이)' 선언이 구조의 틀을 이룬다. 사회적 불의, 탐욕, 방종, 거짓이 고발된다.</div>
+        <div class="insight">히브리어 언어유희: "정의(미쉬파트)"와 "포학(미스파흐)", "공의(체다카)"와 "부르짖음(체아카)"이 발음이 비슷하다. 하나님의 탄식이 문학적으로 극대화되어 있다.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 6–12장 -->
+<div class="section">
+  <div class="section-header c2">
+    <span class="sh-badge">6–12장</span>
+    <span class="sh-title">이사야의 소명과 임마누엘 — 아하스 시대의 위기</span>
+    <span class="sh-keyword">하나님을 의지함</span>
+  </div>
+  <div class="section-body">
+    <div class="unit">
+      <span class="unit-ref">6장</span>
+      <div class="unit-content">
+        <div class="unit-title">이사야의 소명 — 하늘 법정의 장면이 이어진다</div>
+        <div class="unit-note">높이 들린 보좌, 스랍들의 경배, "거룩하다, 거룩하다, 거룩하다." 이사야는 자신의 부정함을 고백하고 숯불로 입술이 정결케 된 후 "내가 여기 있나이다. 나를 보내소서"라고 자원한다. 하늘 법정(1–5장)이 이제 소명의 자리로 이어지는 구조다.</div>
+        <div class="insight">하나님이 보낼 사람이 없어서 고민하신 것이 아니다. 만군의 여호와께서 이사야를 직접 부르신 것은, 인간의 자발적 응답을 통해 역사하시는 하나님의 방식이다.</div>
+      </div>
+    </div>
+    <div class="unit">
+      <span class="unit-ref">7–8장</span>
+      <div class="unit-content">
+        <div class="unit-title">아하스 왕의 불신앙과 임마누엘 표징 <span class="tag tag-j">심판</span></div>
+        <div class="unit-note">시리아-에브라임 동맹군의 위협 앞에 아하스는 하나님을 신뢰하는 대신 앗수르에 도움을 청한다. 이사야는 선언한다 — "네가 원하지 않으면 내가 표징을 주겠다." 그 표징이 바로 '임마누엘'(7:14). 하나님이 함께하심이 위기 속 유일한 답이다. 그러나 아하스는 거부한다.</div>
+        <div class="insight">임마누엘(עִמָּנוּאֵל)은 "하나님이 우리와 함께 계신다"는 뜻. 당시 남유다에게 주어진 표징이었고, 신약에서 예수님의 탄생으로 완성되는 이중적 성취를 갖는다.</div>
+      </div>
+    </div>
+    <div class="unit">
+      <span class="unit-ref">9장</span>
+      <div class="unit-content">
+        <div class="unit-title">큰 빛의 약속 — 어둠 속의 소망 <span class="tag tag-h">소망</span></div>
+        <div class="unit-note">"흑암 중에 행하던 백성이 큰 빛을 보고" (9:2). 심판의 어둠 한가운데에 놀라운 소망의 약속이 삽입된다. "한 아이가 우리에게 났고…그 어깨에는 정사를 메었고… 기묘자라, 모사라, 전능하신 하나님이라, 영존하시는 아버지라, 평강의 왕이라 할 것임이라" (9:6). 이사야서의 구조적 특징 — 심판 속 소망의 섬광.</div>
+      </div>
+    </div>
+    <div class="unit">
+      <span class="unit-ref">10–12장</span>
+      <div class="unit-content">
+        <div class="unit-title">앗수르 심판 + 메시아적 왕 + 찬양의 결론 <span class="tag tag-h">소망</span></div>
+        <div class="unit-note">10장: 하나님의 심판 도구로 사용된 앗수르도 결국 심판받는다. 11장: 이새의 줄기에서 나올 새 싹(메시아 왕)에 대한 비전 — 정의와 공의로 통치하는 왕. 12장: 이 단락 전체의 결론으로서 감사와 찬양의 노래. "여호와께 감사하라. 그 이름을 부르라."</div>
+        <div class="insight">6–12장 전체가 하나의 아름다운 구조를 이룬다: 소명(6) → 불신앙의 위기(7–8) → 소망의 빛(9) → 심판과 회복(10–11) → 찬양(12).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 13–27장 -->
+<div class="section">
+  <div class="section-header c3">
+    <span class="sh-badge">13–27장</span>
+    <span class="sh-title">열방을 향한 심판 신탁 + 이사야의 묵시</span>
+    <span class="sh-keyword">만군의 여호와의 주권</span>
+  </div>
+  <div class="section-body">
+    <div class="unit">
+      <span class="unit-ref">13–23장</span>
+      <div class="unit-content">
+        <div class="unit-title">열방을 향한 심판 신탁 <span class="tag tag-j">심판</span></div>
+        <div class="unit-note">바벨론(13–14), 모압(15–16), 다마스쿠스(17), 이디오피아(18), 이집트(19–20), 바벨론·에돔·아라비아(21), 예루살렘 성읍(22), 두로(23)를 향한 하나님의 심판 선언. 어떤 강대국도, 어떤 문명도 하나님의 주권 아래 있다는 선언이다.</div>
+        <div class="insight">이 단락에서 '만군의 여호와'라는 하나님의 이름이 집중적으로 사용된다. 천상의 군대를 이끄시는 하나님 — 강대국들의 흥망성쇠를 주관하시는 분.</div>
+      </div>
+    </div>
+    <div class="unit">
+      <span class="unit-ref">24–27장</span>
+      <div class="unit-content">
+        <div class="unit-title">이사야의 묵시 — 온 땅의 심판과 우주적 회복 <span class="tag tag-h">소망</span></div>
+        <div class="unit-note">단순히 한 나라가 아닌 '온 땅'을 향한 하나님의 심판과 회복을 노래한다. 24장: 땅이 완전히 황폐해지는 우주적 심판. 25–26장: 열방을 위한 잔치, 죽음의 소멸에 대한 찬양("사망을 영원히 멸하시리니" 25:8). 27장: 하나님의 포도원 이스라엘의 회복 — 5장의 포도원 노래와 대응.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 28–35장 -->
+<div class="section">
+  <div class="section-header c4">
+    <span class="sh-badge">28–35장</span>
+    <span class="sh-title">히스기야 시대 — 이집트를 의지하는 남유다를 향하여</span>
+    <span class="sh-keyword">오직 하나님만 의지하라</span>
+  </div>
+  <div class="section-body">
+    <div class="unit">
+      <span class="unit-ref">28–33장</span>
+      <div class="unit-content">
+        <div class="unit-title">여섯 가지 '화 있을진저' 선언 <span class="tag tag-j">심판</span></div>
+        <div class="unit-note">28:1, 29:1·15, 30:1, 31:1, 33:1 — 여섯 번의 '호이(화 있을진저)' 구조. ① 에브라임의 교만(28) ② 예루살렘의 영적 무감각(29) ③ 이집트 동맹에 의존하는 어리석음(30–31) ④ 의의 왕이 오실 비전(32) ⑤ 배신자에 대한 심판(33). 핵심 메시지: 이집트가 아닌 하나님이 구원이시다.</div>
+        <div class="insight">30:1–2 "여호와의 영을 구하지 아니하고 이집트의 도움을 구하여 바로의 세력 안에서 피하려 하며." 위기 앞에 하나님이 아닌 다른 것을 의지하는 것 — 이것이 이사야 1–39장 전체를 관통하는 인간의 죄다.</div>
+      </div>
+    </div>
+    <div class="unit">
+      <span class="unit-ref">34–35장</span>
+      <div class="unit-content">
+        <div class="unit-title">에돔 심판 + 돌아오는 길의 비전 <span class="tag tag-h">소망</span></div>
+        <div class="unit-note">34장: 에돔을 향한 심판 — 하나님을 대적하는 세력의 최종 결말. 35장: 28–33장의 심판 선언을 넘어 광야에 꽃이 피고 소경이 눈을 뜨며 귀먹은 귀가 열리는 회복의 비전. "거룩한 길"(35:8) — 하나님의 구원으로 돌아오는 포로들의 귀환 행렬을 미리 보여준다. 이 비전은 40장으로 자연스럽게 이어진다.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 36–39장 -->
+<div class="section">
+  <div class="section-header c5">
+    <span class="sh-badge">36–39장</span>
+    <span class="sh-title">역사적 연결 고리 — 히스기야와 앗수르·바벨론</span>
+    <span class="sh-keyword">1–39장 → 40장으로의 다리</span>
+  </div>
+  <div class="section-body">
+    <div class="unit">
+      <span class="unit-ref">36–37장</span>
+      <div class="unit-content">
+        <div class="unit-title">앗수르의 침공과 히스기야의 기도 <span class="tag tag-hist">역사</span></div>
+        <div class="unit-note">앗수르 장군 랍사게의 조롱 — "너희 하나님이 너희를 구할 수 있겠느냐?" 히스기야는 성전에서 하나님께 편지를 펼쳐놓고 기도한다. 이사야는 선언한다 — 앗수르 왕이 예루살렘에 들어오지 못할 것이다. 하나님의 천사가 앗수르 군 18만 5천 명을 치고, 산헤립은 돌아가 암살당한다.</div>
+      </div>
+    </div>
+    <div class="unit">
+      <span class="unit-ref">38장</span>
+      <div class="unit-content">
+        <div class="unit-title">히스기야의 병과 회복 — 죽음에서 생명으로 <span class="tag tag-h">소망</span></div>
+        <div class="unit-note">히스기야가 병들어 죽게 됐을 때 기도하자 수명이 15년 연장된다. 열왕기하 20장과 비교하면 이사야서는 "병들어 나았다"고 강조한다. 이 죽음과 회복의 경험은 40장 이후 이어지는 '포로의 회복' 메시지와 신학적으로 공명한다.</div>
+        <div class="insight">36–38장과 39장의 시간 순서는 바뀌어 있다(39장 사건이 실제로는 먼저). 이는 의도적 편집 — 39장을 마지막에 두어 바벨론 포로를 예고하고 40장의 '위로의 메시지'로 자연스럽게 연결한다.</div>
+      </div>
+    </div>
+    <div class="unit">
+      <span class="unit-ref">39장</span>
+      <div class="unit-content">
+        <div class="unit-title">바벨론 사절단과 히스기야의 실수 — 40장을 여는 문 <span class="tag tag-hist">역사</span></div>
+        <div class="unit-note">바벨론 왕 므로닥발라단이 히스기야에게 사절단을 보낸다(앗수르에 함께 맞서자는 동맹 시도). 히스기야는 왕궁의 모든 보물을 보여준다. 이사야는 선언한다 — "네가 보여준 모든 것이 바벨론으로 옮겨갈 것이요, 네 자손들이 포로가 될 것이다." 이 예고가 40장 이후의 바벨론 포로기 배경을 준비한다.</div>
+        <div class="insight">히스기야의 반응(39:8 "내가 사는 날에는 평화와 안전이 있으리로다")은 당혹스럽다. 이것은 개인의 도덕적 결함이 아니라, 인간은 결국 하나님만의 구원에 의지할 수밖에 없다는 이사야서의 주제를 향해 이야기가 열려 있음을 보여준다.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 하나님의 이름 -->
+<div class="name-box">
+  <h3>✨ 이사야 1–39장의 두 가지 하나님의 이름</h3>
+  <div class="name-grid">
+    <div class="name-card" style="border-color:#8b3010;">
+      <div class="nc-name" style="color:#8b3010;">만군의 여호와<br><small style="font-weight:400;font-size:0.72rem;">(야훼 체바오트)</small></div>
+      <div class="nc-desc">하늘 군대를 이끄시는 대장. 무력적·강렬한 상황에서 불려지는 이름. 1–39장에 집중적으로 등장하며 <b>심판의 맥락</b>과 연결된다.</div>
+    </div>
+    <div class="name-card" style="border-color:#2a6644;">
+      <div class="nc-name" style="color:#2a6644;">이스라엘의 거룩한 이<br><small style="font-weight:400;font-size:0.72rem;">(크도쉬 이스라엘)</small></div>
+      <div class="nc-desc">이사야서에만 25번 등장 — 성경 전체에서 가장 많다. 거룩함을 요청하되 거부당했을 때의 심판, 그리고 40장 이후에는 <b>구원의 맥락</b>으로 사용된다.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 이사야서 읽기 원칙 -->
+<div class="principle-box">
+  <h3>📌 이사야 1–39장을 묵상할 때 붙잡을 3가지</h3>
+  <div class="pr-item">
+    <div class="pr-num">1</div>
+    <div class="pr-text"><b>먼저 그 시대 사람들의 이야기로 읽으라.</b> 예수님 이야기로 곧바로 건너뛰지 말고, 남유다가 처한 국제 정세 속에서 하나님이 무엇을 말씀하시는지를 먼저 들으라. 그 위에서 오늘 우리의 적용이 더 살아있게 된다.</div>
+  </div>
+  <div class="pr-item">
+    <div class="pr-num">2</div>
+    <div class="pr-text"><b>운문(시)으로 읽으라.</b> 이사야서 90% 이상은 산문이 아닌 시(운문)다. 한 절을 과학적으로 분석하기보다 두 행(평행법)이 전달하는 하나의 의미를 느끼고, 비유가 불러일으키는 감정과 장면을 마음에 담으라.</div>
+  </div>
+  <div class="pr-item">
+    <div class="pr-num">3</div>
+    <div class="pr-text"><b>이사야서의 핵심 질문을 붙잡으라.</b> "너는 지금 무엇을 의지하고 있느냐?" 앗수르 앞에서 이집트를 의지했던 남유다처럼, 우리도 위기 앞에서 하나님이 아닌 다른 것을 의지하려는 유혹 앞에 있다. 이사야는 선언한다 — <b>"야훼는 구원이시다."</b>(이사야의 이름 뜻)</div>
+  </div>
+</div>
+
+<div class="footnote">
+  순천서남교회 말씀 공동체
+</div>
+
+</body>
+</html>
