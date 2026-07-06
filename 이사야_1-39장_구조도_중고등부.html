@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이사야 1–39장 — 순천서남교회 교회학교</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    background: #f0f7ff;
+    color: #1a1a2e;
+    padding: 24px 16px 60px;
+    line-height: 1.65;
+  }
+
+  /* ── 헤더 ── */
+  .page-header { text-align: center; margin-bottom: 24px; }
+  .page-header .emoji-top { font-size: 2.2rem; display: block; margin-bottom: 6px; }
+  .page-header h1 {
+    font-size: 1.45rem; font-weight: 800;
+    color: #1a1a3e; letter-spacing: -0.5px; margin-bottom: 4px;
+  }
+  .page-header .sub { font-size: 0.82rem; color: #5566aa; }
+
+  /* ── 큰 그림 ── */
+  .big-picture {
+    background: linear-gradient(135deg, #7b1e0a, #c44020);
+    color: white; border-radius: 16px;
+    padding: 20px 20px; margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(123,30,10,0.3);
+  }
+  .big-picture .bp-label {
+    font-size: 0.72rem; opacity: 0.75; margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .big-picture .bp-title {
+    font-size: 1.08rem; font-weight: 800;
+    margin-bottom: 8px; line-height: 1.4;
+  }
+  .big-picture .bp-desc {
+    font-size: 0.8rem; opacity: 0.9; line-height: 1.65;
+  }
+
+  /* ── 예언이란? 카드 ── */
+  .what-box {
+    background: #fffbe6; border: 2px solid #f0b800;
+    border-radius: 14px; padding: 14px 16px;
+    margin-bottom: 20px;
+    font-size: 0.84rem; color: #3a2e00; line-height: 1.65;
+  }
+  .what-box .wb-title {
+    font-size: 0.9rem; font-weight: 800;
+    color: #2a2000; margin-bottom: 7px;
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  /* ── 3등분 카드 ── */
+  .three-col {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px; margin-bottom: 20px;
+  }
+  .part-card {
+    border-radius: 12px; padding: 13px 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+  }
+  .part-card .pc-emoji { font-size: 1.4rem; display: block; margin-bottom: 4px; }
+  .part-card .pc-range { font-size: 0.65rem; font-weight: 700; opacity: 0.75; margin-bottom: 3px; }
+  .part-card .pc-title { font-size: 0.9rem; font-weight: 800; margin-bottom: 3px; }
+  .part-card .pc-sub { font-size: 0.72rem; opacity: 0.85; line-height: 1.4; }
+  .p1 { background: #8b2a0a; color: white; }
+  .p2 { background: #1a5c7a; color: white; }
+  .p3 { background: #2a6644; color: white; }
+
+  /* ── 시대 배경 타임라인 ── */
+  .timeline {
+    background: white; border-radius: 14px;
+    padding: 15px 16px; margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  }
+  .timeline h3 {
+    font-size: 0.88rem; font-weight: 800;
+    color: #333; margin-bottom: 12px;
+  }
+  .tl-item {
+    display: flex; align-items: flex-start;
+    gap: 10px; margin-bottom: 10px;
+  }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-dot {
+    width: 34px; height: 34px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0;
+  }
+  .tl-content {}
+  .tl-title { font-size: 0.82rem; font-weight: 800; color: #222; margin-bottom: 2px; }
+  .tl-desc { font-size: 0.76rem; color: #555; line-height: 1.5; }
+
+  /* ── 섹션 카드 ── */
+  .section {
+    margin-bottom: 18px; border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.09);
+  }
+  .section-header {
+    padding: 13px 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .sh-badge {
+    background: rgba(255,255,255,0.28); border-radius: 8px;
+    padding: 4px 10px; font-size: 0.72rem;
+    font-weight: 800; white-space: nowrap;
+  }
+  .sh-title {
+    font-size: 0.95rem; font-weight: 800;
+    flex: 1; line-height: 1.3;
+  }
+  .sh-tag {
+    font-size: 0.68rem; background: rgba(255,255,255,0.22);
+    border-radius: 20px; padding: 3px 9px; white-space: nowrap;
+  }
+  .section-body { background: white; padding: 12px 16px; }
+
+  /* ── 유닛 ── */
+  .unit {
+    padding: 10px 0;
+    border-bottom: 1px dashed #e0e8f0;
+  }
+  .unit:last-child { border-bottom: none; }
+  .unit-top {
+    display: flex; align-items: center;
+    gap: 8px; margin-bottom: 4px;
+  }
+  .unit-ref {
+    font-size: 0.68rem; background: #eef2ff;
+    color: #3344aa; border-radius: 6px;
+    padding: 2px 7px; font-weight: 700; white-space: nowrap;
+  }
+  .unit-title { font-size: 0.88rem; font-weight: 700; color: #1a1a2e; }
+  .unit-easy {
+    font-size: 0.8rem; color: #3a3a5a; line-height: 1.55;
+    margin-bottom: 5px;
+  }
+
+  /* ── 생각해봐 박스 ── */
+  .think-box {
+    background: #f0f5ff; border-left: 3px solid #4466ee;
+    border-radius: 0 8px 8px 0;
+    padding: 7px 10px; font-size: 0.76rem;
+    color: #2233aa; line-height: 1.5; margin-top: 5px;
+  }
+  .think-box::before { content: "💬 생각해봐! "; font-weight: 700; }
+
+  /* ── 핵심 구절 ── */
+  .verse-box {
+    background: #fff8f0; border-left: 3px solid #e07820;
+    border-radius: 0 8px 8px 0;
+    padding: 7px 11px; font-size: 0.78rem;
+    color: #6a3200; line-height: 1.55; margin-top: 5px;
+    font-style: italic;
+  }
+  .verse-box::before { content: "📖 "; font-style: normal; }
+
+  /* ── 섹션 색상 ── */
+  .c1 { background: linear-gradient(90deg, #6b1e08, #a03010); color: white; }
+  .c2 { background: linear-gradient(90deg, #3a1a6a, #6a3aaa); color: white; }
+  .c3 { background: linear-gradient(90deg, #1a3a7a, #2a5aaa); color: white; }
+  .c4 { background: linear-gradient(90deg, #1a5e28, #2a8c40); color: white; }
+  .c5 { background: linear-gradient(90deg, #6a2a08, #aa4418); color: white; }
+
+  /* ── 하나님 이름 카드 ── */
+  .name-section {
+    background: white; border-radius: 14px;
+    padding: 15px 17px; margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border-top: 4px solid #c44020;
+  }
+  .name-section h3 {
+    font-size: 0.9rem; font-weight: 800;
+    color: #6b1e08; margin-bottom: 12px;
+  }
+  .name-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .name-card {
+    border-radius: 10px; padding: 12px 13px; border-left: 4px solid;
+  }
+  .name-card .nc-name { font-size: 0.84rem; font-weight: 800; margin-bottom: 4px; }
+  .name-card .nc-easy { font-size: 0.76rem; line-height: 1.55; color: #333; }
+
+  /* ── 마무리 요약 ── */
+  .summary-box {
+    background: white; border-radius: 14px;
+    padding: 16px 17px; margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-top: 4px solid #c44020;
+  }
+  .summary-box h3 {
+    font-size: 0.9rem; font-weight: 800;
+    color: #8b2a0a; margin-bottom: 12px;
+  }
+  .sum-item {
+    display: flex; gap: 10px;
+    margin-bottom: 10px; align-items: flex-start;
+  }
+  .sum-num {
+    background: #c44020; color: white;
+    border-radius: 50%; width: 22px; height: 22px;
+    font-size: 0.72rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; margin-top: 1px;
+  }
+  .sum-text { font-size: 0.82rem; color: #333; line-height: 1.55; }
+  .sum-text b { color: #8b2a0a; }
+
+  .footnote {
+    text-align: center; font-size: 0.72rem; color: #aaa;
+    margin-top: 24px; padding-top: 14px;
+    border-top: 1px solid #ddd;
+  }
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<div class="page-header">
+  <span class="emoji-top">🔥</span>
+  <h1>이사야 1–39장, 이런 책이야!</h1>
+  <p class="sub">순천서남교회 교회학교</p>
+</div>
+
+<!-- 큰 그림 -->
+<div class="big-picture">
+  <div class="bp-label">먼저 이걸 알고 읽자</div>
+  <div class="bp-title">경고인데… 사실은 사랑의 편지야 💌</div>
+  <div class="bp-desc">
+    약 2,700년 전, 이사야라는 선지자가 살았어.<br>
+    나라가 위기에 빠졌을 때 하나님이 그를 통해 말씀하셨어.<br>
+    "너희가 나를 떠나 딴 것을 의지하고 있어. 그것이 문제야."<br>
+    심판처럼 들리지만, 사실은 <b>"돌아와!"</b>라는 하나님의 간절한 외침이야.
+  </div>
+</div>
+
+<!-- 예언이 뭔지 먼저 알기 -->
+<div class="what-box">
+  <div class="wb-title">🤔 예언이 뭔지 먼저 알아야 해!</div>
+  예언은 <b>"미래를 족집게처럼 맞히는 것"</b>이 아니야.<br>
+  예언자는 <b>지금 이 시대 사람들에게 하나님의 말씀을 전하는 사람</b>이야.<br>
+  이사야도 마찬가지야 — 지금 남유다 사람들이 겪고 있는 위기 속에서<br>
+  "하나님이 뭐라고 말씀하시는가"를 전한 거야.<br><br>
+  그런데 신기한 점이 하나 있어 — 그 말씀이 시간을 넘어<br>
+  우리한테도 딱 들어맞는다는 거야. 그게 하나님 말씀의 힘이야.
+</div>
+
+<!-- 이사야서 3등분 -->
+<div class="three-col">
+  <div class="part-card p1">
+    <span class="pc-emoji">⚡</span>
+    <div class="pc-range">1 – 39장</div>
+    <div class="pc-title">심판</div>
+    <div class="pc-sub">앗수르가 무서워<br>딴 나라 의지한<br>남유다 이야기</div>
+  </div>
+  <div class="part-card p2">
+    <span class="pc-emoji">🕊</span>
+    <div class="pc-range">40 – 55장</div>
+    <div class="pc-title">위로</div>
+    <div class="pc-sub">바벨론 포로로<br>끌려간 사람들을<br>향한 희망 메시지</div>
+  </div>
+  <div class="part-card p3">
+    <span class="pc-emoji">🌟</span>
+    <div class="pc-range">56 – 66장</div>
+    <div class="pc-title">새 세상</div>
+    <div class="pc-sub">고향으로 돌아온<br>사람들에게 주신<br>새 창조 비전</div>
+  </div>
+</div>
+
+<!-- 시대 배경 타임라인 -->
+<div class="timeline">
+  <h3>🗺 이사야가 살았던 시대 — 어떤 상황이었어?</h3>
+  <div class="tl-item">
+    <div class="tl-dot" style="background:#fff0e5;">🦁</div>
+    <div class="tl-content">
+      <div class="tl-title" style="color:#8b2a0a;">앗수르 제국 — 엄청 강한 나라가 쳐들어온다</div>
+      <div class="tl-desc">지금으로 치면 세계 최강대국이 옆에서 침략해 오는 상황. 북이스라엘은 앗수르에게 완전히 멸망당했어 (BC 722년). 남유다도 엄청난 공포 속에 있었지.</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot" style="background:#e5f2ff;">😰</div>
+    <div class="tl-content">
+      <div class="tl-title" style="color:#1a5c7a;">남유다의 선택 — 하나님? 아니면 이집트?</div>
+      <div class="tl-desc">무서운 앗수르를 막기 위해 남유다는 이집트에 도움을 요청하려 했어. "강한 나라랑 손잡아야 살아남지!" 근데 하나님은 뭐라고 하셨을까?</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot" style="background:#e5fdf0;">📢</div>
+    <div class="tl-content">
+      <div class="tl-title" style="color:#2a6644;">이사야의 외침 — "나를 의지해!"</div>
+      <div class="tl-desc">하나님은 이사야를 통해 말씀하셨어. "이집트가 아니라 나만이 진짜 구원이야." 이사야라는 이름의 뜻 자체가 <b>"야훼는 구원이시다"</b>야!</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 단락별 구조 ===== -->
+
+<!-- 1–5장 -->
+<div class="section">
+  <div class="section-header c1">
+    <span class="sh-badge">1–5장</span>
+    <span class="sh-title">하늘 법정이 열렸다 — 하나님의 기소장</span>
+    <span class="sh-tag">정의와 공의</span>
+  </div>
+  <div class="section-body">
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">1장</span>
+        <span class="unit-title">이사야서 전체의 예고편 — 뭐가 문제야?</span>
+      </div>
+      <div class="unit-easy">하나님이 마치 검사처럼 이스라엘의 죄목을 열거하셔. 성전에서 제사는 잘 드리는데 실제 삶은 엉망이야. 가난한 자를 돌보지 않고, 하나님보다 돈과 권력을 더 좋아하고. 그게 핵심 문제야.</div>
+      <div class="think-box">예배는 열심히 드리는데 실생활은 딴판인 경우… 나한테는 없어?</div>
+    </div>
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">2–4장</span>
+        <span class="unit-title">꿈꾸는 세상 vs 현실 — 너무 다르다</span>
+      </div>
+      <div class="unit-easy">이사야가 하나님이 원하시는 세상의 비전을 봤어 — 모든 나라가 시온으로 올라와 하나님의 말씀을 배우고 칼을 쟁기로 바꾸는 평화의 세상 (2:4). 근데 현실은? 우상숭배, 부패, 교만이 가득해. 꿈과 현실의 차이가 너무 커서 더 아프게 느껴지는 거야.</div>
+      <div class="verse-box">"그들이 칼을 쳐서 보습을 만들고 창을 쳐서 낫을 만들 것이며 이 나라와 저 나라가 다시는 칼을 들고 서로 치지 아니하며…" (이사야 2:4)</div>
+    </div>
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">5장</span>
+        <span class="unit-title">포도원 노래 — 하나님이 우셨다</span>
+      </div>
+      <div class="unit-easy">하나님이 이스라엘을 포도원에 비유하셨어. 최고의 땅에 최고의 씨앗을 심고 정성껏 돌봤는데 — 맺힌 건 독이 든 포도야. 하나님이 원하신 열매는 딱 두 가지: <b>정의</b>와 <b>공의</b>. 그게 없었던 거야. 그래서 "화 있을진저!(아이고!)"를 여섯 번이나 외치셔.</div>
+      <div class="think-box">하나님이 내 삶에서 보고 싶은 열매가 뭔지 생각해봐. 지금 내 삶에서 그게 맺히고 있어?</div>
+    </div>
+  </div>
+</div>
+
+<!-- 6–12장 -->
+<div class="section">
+  <div class="section-header c2">
+    <span class="sh-badge">6–12장</span>
+    <span class="sh-title">이사야가 부름 받다 + 임마누엘 이야기</span>
+    <span class="sh-tag">하나님이 함께하심</span>
+  </div>
+  <div class="section-body">
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">6장</span>
+        <span class="unit-title">이사야의 소명 — "나를 보내소서!"</span>
+      </div>
+      <div class="unit-easy">하나님이 높이 들린 보좌에 앉으시고 천사들이 "거룩하다, 거룩하다, 거룩하다!"를 외치는 장면. 이사야는 자기가 부정하다는 걸 느끼고 무너졌어. 그런데 하나님이 숯불로 입술을 정결케 하시고 물으셔 — "누구를 보낼까?" 이사야가 대답해: <b>"내가 여기 있나이다. 나를 보내소서!"</b></div>
+      <div class="think-box">하나님이 "누구를 보낼까?" 물으신다면 나는 어떻게 대답할 것 같아?</div>
+    </div>
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">7장</span>
+        <span class="unit-title">아하스의 선택 — 표징을 거부하다</span>
+      </div>
+      <div class="unit-easy">적국이 쳐들어오자 왕 아하스는 겁먹고 앗수르한테 도움을 청하려 해. 이사야가 말해 — "하나님을 믿어. 표징을 줄게." 아하스가 거절해. 그래도 하나님은 표징을 주셔 — <b>"임마누엘"</b>(하나님이 우리와 함께 계신다). 아하스가 거부해도 하나님의 계획은 멈추지 않아.</div>
+      <div class="verse-box">"보라 처녀가 잉태하여 아들을 낳을 것이요 그의 이름을 임마누엘이라 하리라" (이사야 7:14)</div>
+    </div>
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">9장</span>
+        <span class="unit-title">어두운 터널 속 빛 한 줄기 — 아이가 태어난다</span>
+      </div>
+      <div class="unit-easy">온갖 심판 이야기 한복판에 갑자기 엄청난 소망의 노래가 나와. "흑암 중에 행하던 백성이 큰 빛을 보고!" 한 아이가 태어나는데 그 이름이: <b>기묘자, 모사, 전능하신 하나님, 영존하시는 아버지, 평강의 왕.</b> 신약에서 예수님을 통해 이루어진 약속이야.</div>
+      <div class="think-box">가장 어두운 순간에 빛이 온다는 게 어떤 의미인지 생각해봐. 내 인생에도 그런 경험 있어?</div>
+    </div>
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">11–12장</span>
+        <span class="unit-title">새 왕이 온다 + 감사의 노래로 마무리</span>
+      </div>
+      <div class="unit-easy">이새(다윗의 아버지)의 뿌리에서 새 싹이 날 거야 — 정의와 공의로 다스리는 왕. 늑대와 어린 양이 함께 사는 평화의 세상 (11:6). 12장은 이 비전 앞에서 터져 나오는 감사의 찬송이야. 두려움이 아닌 감사로 마무리되는 게 이 단락의 핵심이야.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 13–27장 -->
+<div class="section">
+  <div class="section-header c3">
+    <span class="sh-badge">13–27장</span>
+    <span class="sh-title">세상 모든 나라도 하나님 앞에 서야 해</span>
+    <span class="sh-tag">만군의 여호와의 주권</span>
+  </div>
+  <div class="section-body">
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">13–23장</span>
+        <span class="unit-title">바벨론, 이집트, 두로… 강대국들도 결국 심판받아</span>
+      </div>
+      <div class="unit-easy">이사야는 당시 최강대국들 — 바벨론, 이집트, 앗수르, 두로 같은 나라들을 하나하나 향해 심판을 선언해. 남유다가 그 나라들을 너무 무서워하거나 의지했거든. 하나님 말씀은: "그 나라들도 다 내 손 안에 있어. 무서워하지 마."</div>
+      <div class="think-box">학교에서 엄청 센 아이나 무서운 상황 앞에서 "하나님이 이것도 다 주관하신다"는 걸 믿는 게 어떤 느낌일까?</div>
+    </div>
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">24–27장</span>
+        <span class="unit-title">온 세상이 끝나도 하나님의 잔치는 열려</span>
+      </div>
+      <div class="unit-easy">단순히 한 나라가 아니라 온 세상을 향한 하나님의 최후 심판 이야기야. 근데 그것만으로 끝나지 않아 — 25장에서 하나님이 모든 민족을 위해 잔치를 여시고 죽음을 영원히 없애버리신다는 놀라운 약속이 나와. 27장에서는 다시 포도원 이야기 — 5장의 슬픈 포도원이 이제 회복돼!</div>
+      <div class="verse-box">"그가 사망을 영원히 멸하실 것이라 주 여호와께서 모든 얼굴에서 눈물을 씻기시며…" (이사야 25:8)</div>
+    </div>
+  </div>
+</div>
+
+<!-- 28–35장 -->
+<div class="section">
+  <div class="section-header c4">
+    <span class="sh-badge">28–35장</span>
+    <span class="sh-title">이집트 믿지 마! — 오직 하나님만 의지해</span>
+    <span class="sh-tag">진짜 힘은 어디서?</span>
+  </div>
+  <div class="section-body">
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">28–33장</span>
+        <span class="unit-title">"화 있을진저!" 여섯 번 — 잘못된 의지의 방향</span>
+      </div>
+      <div class="unit-easy">앗수르가 무서우니까 남유다는 이집트랑 동맹을 맺으려 했어. 이사야는 여섯 번이나 "화 있을진저!(아이고!)"를 외쳐. 핵심 메시지는 딱 하나 — <b>"이집트의 군대가 아니라 하나님이 너희 구원이야."</b> 사람은 위기 앞에서 눈에 보이는 강한 것을 의지하려 하는데, 그게 문제야.</div>
+      <div class="think-box">내가 힘들거나 무서울 때 가장 먼저 의지하는 게 뭐야? 그게 정말 나를 지켜줄 수 있어?</div>
+    </div>
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">34–35장</span>
+        <span class="unit-title">광야에 꽃이 피고 — 돌아오는 길</span>
+      </div>
+      <div class="unit-easy">34장에서 하나님을 대적하는 세력의 최후를 보여주고, 35장에서는 완전히 반전이 일어나. 광야에 꽃이 피고, 소경이 눈을 뜨고, 귀먹은 자가 듣고, 저는 자가 달려가는 회복의 장면. "거룩한 길"이 열려서 포로들이 기쁨으로 시온에 돌아와. 이 장면이 40장 이후 이야기를 미리 보여주는 거야.</div>
+      <div class="verse-box">"광야와 메마른 땅이 기뻐하며 사막이 백합화같이 피어 즐거워하며…" (이사야 35:1)</div>
+    </div>
+  </div>
+</div>
+
+<!-- 36–39장 -->
+<div class="section">
+  <div class="section-header c5">
+    <span class="sh-badge">36–39장</span>
+    <span class="sh-title">히스기야 이야기 — 기도가 역사를 바꿨어</span>
+    <span class="sh-tag">1–39장 → 40장 연결</span>
+  </div>
+  <div class="section-body">
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">36–37장</span>
+        <span class="unit-title">앗수르 장군의 조롱 — "너희 하나님이 뭘 할 수 있어?"</span>
+      </div>
+      <div class="unit-easy">앗수르 장군 랍사게가 예루살렘 앞에서 큰 소리로 외쳐 — "너희 하나님도 다른 나라 신들처럼 우리를 막을 수 없어!" 히스기야 왕은 그 편지를 성전에 가져가 하나님 앞에 펼쳐놓고 기도해. 하나님이 응답하셔 — 그날 밤 앗수르 군대 18만 5천 명이 쓰러지고, 앗수르 왕은 도망가서 자기 아들한테 암살당해.</div>
+      <div class="think-box">친구한테 놀림받거나 무시당했을 때 하나님께 그 상황을 가져간 적 있어?</div>
+    </div>
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">38장</span>
+        <span class="unit-title">히스기야의 병과 기도 — 죽음 앞에서 기도했더니</span>
+      </div>
+      <div class="unit-easy">히스기야가 죽을 병에 걸렸어. 이사야가 "준비하라, 죽는다"고 전해. 히스기야가 벽을 향해 돌아 누워 눈물로 기도해. 하나님이 응답하셔 — 수명이 15년 더 연장돼. 하나님은 기도를 들으시고 상황을 바꾸시는 분이야.</div>
+    </div>
+    <div class="unit">
+      <div class="unit-top">
+        <span class="unit-ref">39장</span>
+        <span class="unit-title">히스기야의 실수 — 40장을 여는 문</span>
+      </div>
+      <div class="unit-easy">바벨론에서 사절단이 왔어. 히스기야가 왕궁의 모든 보물을 자랑하며 보여줬어. 이사야가 경고해 — "네가 보여준 것들이 언젠가 다 바벨론으로 끌려갈 것이야." 이 예언이 40장 이후의 배경(바벨론 포로)으로 이어지는 거야. 아무리 믿음 좋은 왕도 실수하고, 결국 인간은 하나님만 의지해야 한다는 걸 보여줘.</div>
+      <div class="think-box">잘 될 때 오히려 하나님을 잊고 자기 자랑을 하게 된다는 게 어떤 의미인지 생각해봐.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 하나님의 두 이름 -->
+<div class="name-section">
+  <h3>✨ 이사야서에 나오는 하나님의 특별한 이름 2가지</h3>
+  <div class="name-grid">
+    <div class="name-card" style="border-color:#c44020;background:#fff5f0;">
+      <div class="nc-name" style="color:#8b2a0a;">만군의 여호와<br><small style="font-weight:400;font-size:0.7rem;">(야훼 체바오트)</small></div>
+      <div class="nc-easy">하늘 군대를 이끄시는 총사령관. 세상에서 무서운 일이 일어날 때 불려지는 이름이야. "아무리 강한 군대도 내가 더 강해!"</div>
+    </div>
+    <div class="name-card" style="border-color:#2a6644;background:#f0fdf5;">
+      <div class="nc-name" style="color:#1a5e28;">이스라엘의 거룩한 이<br><small style="font-weight:400;font-size:0.7rem;">(크도쉬 이스라엘)</small></div>
+      <div class="nc-easy">이 이름은 이사야서에만 25번 나와! "나는 거룩해, 너희도 거룩하게 살아." 거룩함을 요청하고, 안 들으면 심판하시지만 40장 이후엔 구원의 이름으로 바뀌어.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 마무리 요약 -->
+<div class="summary-box">
+  <h3>📌 이사야 1–39장을 3줄로 요약하면</h3>
+  <div class="sum-item">
+    <div class="sum-num">1</div>
+    <div class="sum-text"><b>하나님이 아닌 것을 의지하면 무너진다.</b> 남유다는 강대국 이집트를 믿었어. 우리는 뭘 믿고 있어?</div>
+  </div>
+  <div class="sum-item">
+    <div class="sum-num">2</div>
+    <div class="sum-text"><b>심판 안에도 소망이 있다.</b> 이사야서는 심판 이야기 한복판에 임마누엘, 평강의 왕, 광야의 꽃이라는 소망을 계속 심어. 어둠 속에서도 하나님은 포기하지 않으셔.</div>
+  </div>
+  <div class="sum-item">
+    <div class="sum-num">3</div>
+    <div class="sum-text"><b>이사야 = "야훼는 구원이시다."</b> 이게 이 책 전체의 메시지야. 어떤 상황에서도 진짜 구원은 하나님 한 분뿐이야.</div>
+  </div>
+</div>
+
+<div class="footnote">
+  순천서남교회 교회학교
+</div>
+
+</body>
+</html>
