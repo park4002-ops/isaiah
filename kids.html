@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이사야 탐험대(40~66장) — 순천서남교회</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700;900&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F3EA;
+    --panel:#FFFFFF;
+    --panel-line:#E2DBC8;
+    --ink:#2B2A4A;
+    --ink-soft:#4E4C73;
+    --ink-faint:#8987A6;
+    --gold:#D9953A;
+    --gold-deep:#9A6420;
+    --gold-tint:#FBEBD2;
+    --indigo:#2E7D80;
+    --indigo-deep:#1D5A5D;
+    --indigo-tint:#DFF0F0;
+    --coral:#C8607A;
+    --coral-deep:#8F3A52;
+    --coral-tint:#F8E1E8;
+    --shadow: 0 2px 4px rgba(43,42,74,0.07), 0 14px 32px -16px rgba(43,42,74,0.24);
+  }
+
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html{ color-scheme: light; }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    line-height:1.8;
+    font-size:19px;
+    -webkit-font-smoothing:antialiased;
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+  }
+  .wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+  h1,h2,h3{ font-family:'Noto Serif KR','Batang',serif; font-weight:800; letter-spacing:-0.01em; text-wrap:balance; }
+
+  /* ---------- Hero banner ---------- */
+  header.hero{
+    margin:20px 0 28px; border-radius:22px; overflow:hidden; position:relative;
+    background:linear-gradient(150deg, var(--indigo-deep) 0%, var(--coral) 100%);
+    box-shadow:var(--shadow); padding:40px 26px 34px; text-align:center; color:#FFF8EE;
+  }
+  header.hero::after{
+    content:''; position:absolute; left:0; right:0; bottom:0; height:46%;
+    background:radial-gradient(circle at 50% 120%, rgba(255,214,158,0.55), transparent 60%);
+    pointer-events:none;
+  }
+  .eyebrow{
+    position:relative; display:inline-block; font-size:15px; font-weight:700; letter-spacing:0.03em;
+    color:#FFF3DC; background:rgba(255,255,255,0.16); border:1px solid rgba(255,255,255,0.35);
+    border-radius:999px; padding:8px 16px; margin-bottom:22px;
+  }
+  h1.title{ position:relative; font-size:42px; line-height:1.28; margin:0 0 16px; color:#FFFDF6; }
+  .subtitle{ position:relative; font-size:19px; color:#E6F4F2; max-width:26em; margin:0 auto; font-weight:500; line-height:1.7; }
+  .hero-verse{
+    position:relative; margin-top:28px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.32);
+    font-family:'Noto Serif KR',serif; font-size:18px; color:#FFF3DC; font-weight:600; line-height:1.75;
+  }
+  .hero-verse b{ color:#FFFFFF; }
+
+  /* ---------- Intro ---------- */
+  .intro{ padding:8px 4px 28px; }
+  .intro p{ font-size:19px; color:var(--ink); margin:0 0 18px; }
+  .intro p:last-child{ margin-bottom:0; }
+  .intro b{ color:var(--coral-deep); }
+
+  /* ---------- Spine sections ---------- */
+  .spine{ position:relative; margin-top:12px; }
+  .spine::before{
+    content:''; position:absolute; left:26px; top:8px; bottom:8px; width:3px;
+    background:linear-gradient(var(--gold), var(--indigo) 50%, var(--coral) 100%);
+    border-radius:3px; opacity:.55;
+  }
+  .station{ position:relative; padding:2px 0 44px 72px; }
+  .station:last-child{ padding-bottom:6px; }
+  .station-num{
+    position:absolute; left:0; top:0; width:52px; height:52px; border-radius:50%;
+    color:#FFFDF6; font-family:'Noto Serif KR',serif; font-weight:800; font-size:21px;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:var(--shadow);
+  }
+  .station:nth-child(3n+1) .station-num{ background:var(--gold); }
+  .station:nth-child(3n+2) .station-num{ background:var(--indigo); }
+  .station:nth-child(3n+3) .station-num{ background:var(--coral); }
+
+  .station h2{ font-size:25px; margin:8px 0 14px; color:var(--ink); line-height:1.4; }
+  .station p{ font-size:18.5px; color:var(--ink); margin:0 0 16px; }
+  .station p.soft{ color:var(--ink-soft); font-size:17.5px; }
+  .station p:last-child{ margin-bottom:0; }
+  .station b{ color:var(--coral-deep); }
+
+  /* ---------- table ---------- */
+  .structure-table{ width:100%; border-collapse:collapse; margin:18px 0 20px; font-size:16px; }
+  .structure-table th,.structure-table td{
+    text-align:left; padding:13px 9px; border-bottom:2px solid var(--panel-line); vertical-align:top;
+  }
+  .structure-table th{ color:var(--ink-faint); font-weight:700; font-size:13px; letter-spacing:.03em; }
+  .structure-table td:first-child{ color:var(--ink); font-weight:700; }
+  .structure-table td:nth-child(2){ color:var(--coral-deep); font-weight:700; white-space:nowrap; }
+
+  .seed-table{ width:100%; border-collapse:collapse; margin:16px 0 4px; font-size:15.5px; }
+  .seed-table th,.seed-table td{ text-align:left; padding:12px 9px; border-bottom:2px solid var(--panel-line); vertical-align:top; }
+  .seed-table th{ color:var(--ink-faint); font-weight:700; font-size:12.5px; letter-spacing:.03em; }
+  .seed-table td:nth-child(2){ white-space:nowrap; }
+  .seed-table td:nth-child(2) span{
+    display:inline-block; padding:4px 10px; border-radius:8px; font-size:13.5px; font-weight:800; color:#FFF;
+  }
+  .seed-table tr:nth-child(2) td:nth-child(2) span{ background:var(--coral); }
+  .seed-table tr:nth-child(3) td:nth-child(2) span{ background:var(--indigo); }
+  .seed-table tr:nth-child(4) td:nth-child(2) span{ background:var(--gold); }
+  .table-note{ font-size:15px; color:var(--ink-faint); margin-top:14px; line-height:1.75; border-left:3px solid var(--panel-line); padding-left:13px; }
+
+  /* ---------- two-column compare ---------- */
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:18px 0 6px; }
+  .compare-card{ border-radius:14px; padding:17px 16px; box-shadow:var(--shadow); }
+  .compare-card.paul{ background:var(--indigo-tint); border:1.5px solid var(--indigo); }
+  .compare-card.james{ background:var(--coral-tint); border:1.5px solid var(--coral); }
+  .compare-card .label{ font-size:14px; font-weight:800; letter-spacing:.02em; margin-bottom:9px; }
+  .compare-card.paul .label{ color:var(--indigo-deep); }
+  .compare-card.james .label{ color:var(--coral-deep); }
+  .compare-card .body{ font-size:15.5px; color:var(--ink); line-height:1.75; font-weight:500; }
+
+  /* ---------- three theme cards ---------- */
+  .theme-grid{ display:flex; flex-direction:column; gap:12px; margin:18px 0 6px; }
+  .theme-card{
+    background:var(--panel); border:2px solid var(--panel-line); border-radius:14px;
+    padding:17px 18px; box-shadow:var(--shadow);
+  }
+  .theme-card .t-title{ font-family:'Noto Serif KR',serif; font-weight:800; font-size:18.5px; margin-bottom:7px; }
+  .theme-card:nth-child(1) .t-title{ color:var(--gold-deep); }
+  .theme-card:nth-child(2) .t-title{ color:var(--indigo-deep); }
+  .theme-card:nth-child(3) .t-title{ color:var(--coral-deep); }
+  .theme-card .t-body{ font-size:16.5px; color:var(--ink-soft); line-height:1.75; }
+
+  /* ---------- key verse ---------- */
+  .key-verse{
+    background:var(--indigo-deep); border-radius:16px;
+    padding:28px 24px; margin:18px 0 6px; box-shadow:var(--shadow);
+  }
+  .key-verse blockquote{
+    margin:0 0 12px; font-family:'Noto Serif KR',serif; font-size:20px; line-height:1.72;
+    color:#FFFDF6; font-weight:700;
+  }
+  .key-verse cite{ font-style:normal; font-size:15.5px; color:#DCE2F4; font-weight:600; }
+  .key-question{
+    margin-top:18px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.25);
+    font-size:17px; color:#FFF3DC; font-weight:700; line-height:1.7;
+  }
+
+  /* ---------- Questions callout ---------- */
+  .questions{
+    margin:48px 0 40px; padding:32px 22px; border-radius:22px;
+    background:var(--indigo-tint); border:2px solid var(--indigo);
+  }
+  .questions .qtag{
+    display:inline-block; font-size:14.5px; font-weight:800; letter-spacing:.04em; color:#FFFFFF;
+    background:var(--indigo); border-radius:999px; padding:7px 15px; margin-bottom:16px;
+  }
+  .questions h2{ font-size:26px; margin:0 0 12px; color:var(--indigo-deep); line-height:1.4; }
+  .questions > p.lead{ font-size:17px; color:var(--ink-soft); margin:0 0 24px; line-height:1.75; }
+  .qlist{ display:flex; flex-direction:column; gap:16px; }
+  .qitem{
+    display:flex; gap:16px; align-items:flex-start; background:var(--panel);
+    border-radius:14px; padding:19px 18px; box-shadow:var(--shadow);
+  }
+  .qitem .qnum{
+    font-family:'Noto Serif KR',serif; font-weight:800; font-size:20px; color:#FFF;
+    background:var(--indigo); width:36px; height:36px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .qitem .qbody h3{ font-size:20px; margin:0 0 7px; color:var(--ink); line-height:1.4; }
+  .qitem .qbody p{ font-size:16.5px; color:var(--ink-soft); margin:0; line-height:1.7; }
+
+  .also{ margin-top:26px; padding-top:22px; border-top:2px dashed var(--indigo); }
+  .also p.lead{ font-size:15.5px; color:var(--indigo-deep); font-weight:700; margin:0 0 13px; }
+  .also ol{ margin:0; padding-left:24px; }
+  .also li{ font-size:16.5px; color:var(--ink); margin-bottom:11px; line-height:1.7; }
+  .also li:last-child{ margin-bottom:0; }
+
+  /* ---------- footer ---------- */
+  footer{ text-align:center; padding-top:8px; }
+  footer .sched{ font-size:15.5px; color:var(--ink-faint); margin-bottom:26px; line-height:1.85; }
+  footer .signoff{
+    font-family:'Noto Serif KR',serif; font-size:17.5px; color:var(--ink-soft); font-weight:600;
+    border-top:2px solid var(--panel-line); padding-top:26px;
+  }
+  footer .church{ display:flex; align-items:center; justify-content:center; gap:9px; margin-top:12px; font-weight:800; color:var(--coral-deep); font-size:19.5px; letter-spacing:.01em; }
+  footer .church img{ height:26px; width:auto; display:block; }
+
+  @media (max-width:420px){
+    body{ font-size:17.5px; }
+    h1.title{ font-size:33px; }
+    .compare{ grid-template-columns:1fr; }
+    header.hero{ padding:34px 20px 28px; }
+    .station{ padding-left:60px; }
+    .station-num{ width:44px; height:44px; font-size:18px; }
+    .spine::before{ left:21px; }
+  }
+
+  /* ---------- 이번에 읽는 부분 ---------- */
+  .range{ margin:48px 0 8px; padding:30px 20px; border-radius:22px; background:var(--panel); border:2px solid var(--panel-line); box-shadow:var(--shadow); }
+  .range .qtag{ display:inline-block; font-size:14.5px; font-weight:800; color:#FFF; background:var(--coral); border-radius:999px; padding:7px 15px; margin-bottom:14px; }
+  .range h2{ font-size:26px; margin:0 0 10px; color:var(--ink); line-height:1.4; }
+  .range > p.lead{ font-size:16.5px; color:var(--ink-soft); margin:0 0 18px; line-height:1.75; }
+  .date-table{ width:100%; border-collapse:collapse; font-size:15.5px; margin:6px 0 22px; }
+  .date-table th,.date-table td{ text-align:left; padding:10px 8px; border-bottom:2px solid var(--panel-line); vertical-align:top; }
+  .date-table th{ color:var(--ink-faint); font-weight:700; font-size:12.5px; }
+  .date-table td:nth-child(1){ white-space:nowrap; font-weight:700; color:var(--ink); }
+  .date-table td:nth-child(2){ white-space:nowrap; color:var(--coral-deep); font-weight:700; }
+  .block-card{ border-radius:14px; padding:17px 18px; margin:0 0 12px; border:2px solid var(--panel-line); background:var(--bg); }
+  .block-card .b-title{ font-family:'Noto Serif KR',serif; font-weight:800; font-size:18.5px; margin-bottom:6px; color:var(--indigo-deep); }
+  .block-card .b-genre{ font-size:13.5px; font-weight:800; color:var(--coral-deep); margin-bottom:8px; }
+  .block-card p{ font-size:16px; color:var(--ink-soft); line-height:1.75; margin:0 0 8px; }
+  .block-card blockquote{ margin:8px 0; padding:10px 14px; border-left:4px solid var(--gold); background:var(--gold-tint); font-family:'Noto Serif KR',serif; font-size:16.5px; line-height:1.7; color:var(--ink); }
+  .block-card .look{ font-size:15.5px; color:var(--indigo-deep); font-weight:700; margin:8px 0 0; }
+  .structure-table td:first-child{ white-space:nowrap; }
+
+  /* ---------- 전체 그림 구분 · 편지 순서 ---------- */
+  .part-tag{ display:inline-block; font-size:14.5px; font-weight:800; letter-spacing:.03em; color:#FFF; background:var(--indigo); border-radius:999px; padding:7px 15px; margin:8px 0 18px; }
+  .flow{ margin:16px 0 14px; padding-left:26px; }
+  .flow li{ font-size:17px; color:var(--ink); margin-bottom:9px; line-height:1.7; }
+  .flow li b{ color:var(--coral-deep); }
+
+  /* ---------- 친숙판 추가 ---------- */
+  details.more{ margin:34px 0 12px; border:2px dashed var(--panel-line); border-radius:16px; padding:16px 18px; background:var(--panel); }
+  details.more summary{ cursor:pointer; font-family:'Noto Serif KR',serif; font-weight:800; font-size:19px; color:var(--indigo-deep); line-height:1.5; }
+  details.more .more-body{ margin-top:14px; }
+  details.more .more-body p{ font-size:16.5px; color:var(--ink-soft); line-height:1.8; margin:0 0 12px; }
+  details.more .more-body p b{ color:var(--coral-deep); }
+  .tip{ margin:0 0 16px; padding:14px 16px; border-radius:12px; background:var(--gold-tint); color:var(--ink); font-size:17px; line-height:1.75; }
+
+  /* ---------- 어린이·청소년판 ---------- */
+  body.kids{ font-size:19px; }
+  body.kids header.hero{ background:linear-gradient(150deg, #E0983C 0%, #C8607A 55%, #2E7D80 100%); }
+  body.kids h1.title{ font-size:40px; }
+  .hook{ margin:6px 0 30px; padding:24px 22px; border-radius:20px; background:var(--gold-tint); border:2px solid var(--gold); box-shadow:var(--shadow); }
+  .hook p{ font-size:19px; color:var(--ink); margin:0 0 14px; line-height:1.85; }
+  .hook p:last-child{ margin-bottom:0; }
+  .hook b{ color:var(--coral-deep); }
+  .hook .big{ font-family:'Noto Serif KR',serif; font-weight:800; font-size:23px; color:var(--coral-deep); line-height:1.55; }
+  .idcard{ border:2px solid var(--indigo); border-radius:16px; background:var(--indigo-tint); padding:6px 16px; margin:16px 0 6px; }
+  .idcard div{ display:flex; gap:12px; padding:11px 0; border-bottom:2px dashed rgba(46,125,128,.35); font-size:17px; line-height:1.6; }
+  .idcard div:last-child{ border-bottom:0; }
+  .idcard b{ flex:none; width:5.6em; color:var(--indigo-deep); }
+  .facts{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:16px 0 14px; }
+  .fact{ border-radius:14px; padding:16px 14px; text-align:center; background:var(--panel); border:2px solid var(--panel-line); box-shadow:var(--shadow); }
+  .fact .n{ display:block; font-family:'Noto Serif KR',serif; font-weight:900; font-size:34px; color:var(--coral); line-height:1.2; }
+  .fact .t{ display:block; font-size:15.5px; color:var(--ink-soft); line-height:1.55; margin-top:4px; }
+  .quote{ margin:12px 0; padding:12px 16px; border-left:5px solid var(--gold); background:var(--gold-tint); font-family:'Noto Serif KR',serif; font-size:17.5px; line-height:1.75; color:var(--ink); border-radius:0 10px 10px 0; }
+  .quote small{ display:block; margin-top:6px; font-family:'Noto Sans KR',sans-serif; font-size:14px; font-weight:700; color:var(--gold-deep); }
+  .ask{ margin:14px 0 0; padding:13px 16px; border-radius:12px; background:var(--indigo-tint); border:2px solid var(--indigo); font-weight:700; color:var(--indigo-deep); font-size:17.5px; line-height:1.65; }
+  details.deep{ margin:14px 0 0; border:2px dashed var(--coral); border-radius:14px; padding:12px 16px; background:var(--coral-tint); }
+  details.deep summary{ cursor:pointer; font-weight:800; color:var(--coral-deep); font-size:16.5px; }
+  details.deep p{ font-size:16.5px; color:var(--ink); margin:10px 0 0; line-height:1.75; }
+  details.ans{ margin:8px 0; border:2px solid var(--panel-line); border-radius:12px; background:var(--panel); padding:11px 14px; }
+  details.ans summary{ cursor:pointer; font-weight:700; color:var(--ink); font-size:17px; line-height:1.6; }
+  details.ans p{ margin:8px 0 0; padding-top:8px; border-top:2px dotted var(--panel-line); font-size:16.5px; color:var(--coral-deep); font-weight:700; line-height:1.65; }
+  .pairs{ margin:14px 0 6px; }
+  .pairs .row{ margin:0 0 8px; }
+  .backlink{ display:block; text-align:center; margin:30px 0 6px; padding:14px; border-radius:14px; background:var(--indigo); color:#FFF; font-weight:800; text-decoration:none; font-size:17px; }
+  .date-table td:nth-child(3){ font-size:15px; }
+  .date-table td:nth-child(4){ white-space:nowrap; font-size:14.5px; }
+  .date-table td:nth-child(4) a{ color:var(--indigo-deep); font-weight:700; }
+  @media (max-width:420px){ .facts{ grid-template-columns:1fr 1fr; } .fact .n{ font-size:28px; } body.kids h1.title{ font-size:32px; } .idcard b{ width:4.8em; } }
+</style>
+</head>
+
+<body class="kids">
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow">순천서남교회 말씀공동체 · 어린이·청소년</span>
+    <h1 class="title">이사야 탐험대<br>위로의 책 편</h1>
+    <p class="subtitle">집에서 쫓겨난 사람들에게<br>하나님이 맨 처음 한 말은 뭘까요?</p>
+    <p class="hero-verse">“너희는 위로하여라! 나의 백성을 위로하여라!”<br>— 이사야 40:1 (새번역)</p>
+  </header>
+
+  <section class="hook">
+    <p>이사야는 66장짜리 아주 긴 책이에요. 그런데 이 책은 <b>39장까지는 따끔한 경고가 많고, 40장부터는 분위기가 확 달라져요.</b></p>
+    <p>40장의 첫 말씀은 경고도 아니고 야단도 아니에요. 바로 이 말이에요. <b>“너희는 위로하여라!”</b> (40:1, 새번역)</p>
+    <p class="big">누가 누구를 위로하라는 걸까요?<br>왜 하필 그때 이런 말씀이 나왔을까요?<br>11월 26일부터 12월 31일까지, 36일 동안 같이 파헤쳐 봐요!</p>
+  </section>
+
+  <div class="part-tag">탐험 코스 · 이사야 40~66장 속으로</div>
+
+  <div class="spine">
+
+    <div class="station">
+      <div class="station-num">1</div>
+      <h2>책 한 권인데, 목소리가 바뀌어요</h2>
+      <div class="facts">
+        <div class="fact"><span class="n">66장</span><span class="t">이사야서 전체예요.</span></div>
+        <div class="fact"><span class="n">27장</span><span class="t">우리가 읽을 40~66장이에요.</span></div>
+        <div class="fact"><span class="n">36일</span><span class="t">11월 26일~12월 31일, 하루 한 부분씩 읽어요.</span></div>
+        <div class="fact"><span class="n">3묶음</span><span class="t">40~48장 · 49~55장 · 56~66장으로 나눠서 걸어요.</span></div>
+      </div>
+      <p>여름에 읽은 1~39장은 <b>심판의 경고</b>가 많았어요. 40장부터는 포로로 끌려간 백성에게 하나님이 <b>먼저 위로를 말씀하세요.</b></p>
+      <p class="ask">경고를 많이 들은 사람에게 갑자기 “위로하여라”가 들리면 어떤 기분일까요?</p>
+    </div>
+
+    <div class="station">
+      <div class="station-num">2</div>
+      <h2>이 말씀은 누구에게 한 걸까요?</h2>
+      <p>40~48장은 <b>포로로 끌려가 낯선 땅에서 지내던 사람들</b>에게 한 말씀이에요. 집에서 멀리 떨어져, “하나님이 우리를 잊으셨나?” 하고 생각하던 사람들이지요.</p>
+      <div class="quote">“너희는 위로하여라! 나의 백성을 위로하여라!” 너희의 하나님께서 말씀하신다.<small>이사야 40:1 (새번역)</small></div>
+      <p>성경을 읽을 때는 <b>“이 말씀은 누구에게 한 말일까?”</b> 를 먼저 찾아보면 훨씬 잘 읽혀요. 이 탐험의 첫 번째 규칙이에요!</p>
+      <p class="ask">지쳐서 말도 하기 싫을 때, 누가 먼저 말을 걸어 주면 어떤 마음이 들까요?</p>
+    </div>
+
+    <div class="station">
+      <div class="station-num">3</div>
+      <h2>지친 사람에게 새 힘!</h2>
+      <div class="quote">비록 젊은이들이 피곤하여 지치고, 장정들이 맥없이 비틀거려도, 오직 주님을 소망으로 삼는 사람은 새 힘을 얻으리니, 독수리가 날개를 치며 솟아오르듯 올라갈 것이요, 뛰어도 지치지 않으며, 걸어도 피곤하지 않을 것이다.<small>이사야 40:30~31 (새번역)</small></div>
+      <p>독수리처럼 날아오른다니, 정말 멋지지요? 그런데 마지막 줄을 잘 보세요. <b>“걸어도 피곤하지 않을 것이다.”</b> 날아오르는 것만이 아니라, 매일 걸어가는 데에도 힘을 주신다는 말씀이에요.</p>
+      <p class="ask">요즘 나는 어떤 일에 ‘지쳐서 비틀거리는’ 것 같나요? 날아오르기보다 걸어갈 힘이 필요한 건 아닐까요?</p>
+    </div>
+
+    <div class="station">
+      <div class="station-num">4</div>
+      <h2>같은 나무로 불도 때고 신도 만든다고요?</h2>
+      <p>44장에서는 이상한 장면이 나와요. 나무 한 토막으로 어떤 일을 하는지 보세요. (44:14~17)</p>
+      <div class="quote">우상을 만드는 것과 꼭 같은 나무 반 토막으로는 불을 피우고, 그 불덩이 위에 고기를 구워 먹고, 그것으로 배를 불리며, 또 몸을 따스하게 하며 ‘아, 불을 보니 따뜻하다’ 하고 말한다. 불을 때고 남은 토막으로는 신상 곧 우상을 만들고, 그 앞에 엎드려 숭배하고, 그것에게 기도하며 ‘나의 신이여, 나를 구원하여 주십시오’ 하고 빈다.<small>이사야 44:16~17 (새번역)</small></div>
+      <p>나무 반 토막은 <b>땔감</b>이 되고, 나머지 반 토막은 <b>신</b>이 돼요. 만든 사람이 만든 물건에게 “나를 구원해 주세요” 하고 비는 모습이에요.</p>
+      <p class="ask">이 장면에서 어디가 가장 이상한가요? (힌트: 누가 누구를 만들었나요?)</p>
+      <details class="deep"><summary>🔍 중고등학생 더 깊이</summary><p>이 말씀은 우상을 놀리는 풍자예요. 오늘날에도 ‘내가 만들어 놓고 의지하는 것’이 있는지 생각해 보면, 이 본문이 남의 이야기만은 아니라는 걸 알게 돼요. 돈, 성적, 인기처럼 좋은 것도 나를 구원해 주는 자리에 올라앉으면 문제가 될 수 있어요.</p></details>
+    </div>
+
+    <div class="station">
+      <div class="station-num">5</div>
+      <h2>업혀 가는 신, 안고 가시는 하나님</h2>
+      <p>46장에는 두 가지 그림이 나란히 나와요.</p>
+      <div class="compare">
+        <div class="compare-card paul"><div class="label">바벨론의 신들</div><div class="body">짐승과 가축이 싣고 가요. 피곤한 짐승에게 <b>무거운 짐</b>이 돼요. (46:1)</div></div>
+        <div class="compare-card james"><div class="label">이스라엘의 하나님</div><div class="body">백성을 <b>안고 다니세요.</b> 짐이 되는 쪽이 아니라 짐을 지는 쪽이에요. (46:3~4)</div></div>
+      </div>
+      <div class="quote">너희가 늙을 때까지 내가 너희를 안고 다니고, 너희가 백발이 될 때까지 내가 너희를 품고 다니겠다. 내가 너희를 지었으니, 내가 너희를 품고 다니겠고, 안고 다니겠고, 또 구원하여 주겠다.<small>이사야 46:4 (새번역)</small></div>
+      <p class="ask">‘업혀 가는 신’과 ‘안고 가시는 하나님’ 중에서 누구와 함께 살고 싶나요? 왜 그런가요?</p>
+    </div>
+
+    <div class="station">
+      <div class="station-num">6</div>
+      <h2>이름을 불러 주신 낯선 왕</h2>
+      <p>44~45장에는 깜짝 놀랄 이름이 나와요. 이스라엘 사람이 아닌 <b>고레스라는 왕</b>이에요. 하나님이 그 이름을 직접 부르세요.</p>
+      <div class="quote">“나 주가 기름 부어 세운 고레스에게 말한다. 내가 너의 오른손을 굳게 잡아, …”<small>이사야 45:1 (새번역)</small></div>
+      <p>하나님의 일이 이스라엘이라는 울타리 안에서만 일어나는 게 아니라는 걸 보여 주는 장면이에요.</p>
+      <p class="ask">하나님이 이스라엘이 아닌 사람의 이름까지 부르신다면, 하나님의 마음은 얼마나 넓은 걸까요?</p>
+      <details class="deep"><summary>🔍 중고등학생 더 깊이</summary><p>44장 28절과 45장 1절은 고레스를 이름으로 불러요. 이것을 ‘미리 한 예언’으로 읽는 사람도 있고, ‘그 시대 사람들에게 한 말’로 읽는 사람도 있어요. 어느 쪽이 옳은지 우리가 여기서 정하지 않고, 본문이 말하는 대로 읽어요.</p></details>
+    </div>
+
+    <div class="station">
+      <div class="station-num">7</div>
+      <h2>손바닥에 새겨진 이름</h2>
+      <p>시온(예루살렘)은 이렇게 말했어요.</p>
+      <div class="quote">주님께서 나를 버리셨고, 주님께서 나를 잊으셨다<small>이사야 49:14 (새번역) — 시온의 말</small></div>
+      <p>하나님은 뭐라고 대답하셨을까요?</p>
+      <div class="quote">“어머니가 어찌 제 젖먹이를 잊겠으며, 제 태에서 낳은 아들을 어찌 긍휼히 여기지 않겠느냐! 비록 어머니가 자식을 잊는다 하여도, 나는 절대로 너를 잊지 않겠다. 보아라, 예루살렘아, 내가 네 이름을 내 손바닥에 새겼고, 네 성벽을 늘 지켜 보고 있다.”<small>이사야 49:15~16 (새번역)</small></div>
+      <p class="ask">이름을 손바닥에 새기면 어떤 점이 달라질까요? 내 이름도 거기 있다고 생각하면 어떤 마음이 드나요?</p>
+    </div>
+
+    <div class="station">
+      <div class="station-num">8</div>
+      <h2>성경이 일부러 안 알려 준 미스터리 — ‘종’은 누구일까요?</h2>
+      <p>이사야 40~55장에는 <b>‘종의 노래’</b>가 여러 번 나와요(42장, 49장, 50장, 52~53장). 하나님이 붙드시는 종이 등장하지요.</p>
+      <div class="quote">그는 상한 갈대를 꺾지 않으며, 꺼져 가는 등불을 끄지 않으며, 진리로 공의를 베풀 것이다.<small>이사야 42:3 (새번역)</small></div>
+      <p>그런데 이 종이 누구인지는 읽는 사람마다 의견이 갈려요. 49장 3절은 종을 이렇게 불러요.</p>
+      <div class="quote">주님께서 내게 말씀하셨다. “이스라엘아, 너는 내 종이다. 네가 내 영광을 나타낼 것이다.”<small>이사야 49:3 (새번역)</small></div>
+      <p>그래서 ‘종’이 이스라엘 백성을 가리킨다고 읽는 사람도 있고, 한 사람을 가리킨다고 읽는 사람도 있어요. 신약성경은 이 노래들을 예수님의 이야기와 이어서 읽어요. 이번 탐험에서는 <b>한 가지로 정해 버리지 않고</b>, 본문이 그리는 모습을 천천히 따라가 봐요.</p>
+      <p class="ask">‘상한 갈대’와 ‘꺼져 가는 등불’은 어떤 사람을 말하는 걸까요? 이 종은 그런 사람에게 어떻게 하나요?</p>
+      <details class="deep"><summary>🔍 중고등학생 더 깊이</summary><p>이사야서를 한 사람의 예언으로 읽는 방식도 있고, 40장 이후를 포로 시대와 돌아온 뒤의 예언으로 나누어 읽는 방식도 있어요. 학자들 사이에서도 의견이 갈리는 부분이에요. 우리는 어느 쪽이 옳은지 다투기보다, 본문이 지금 우리에게 무엇을 말하는지 먼저 들어 봐요.</p></details>
+    </div>
+
+    <div class="station">
+      <div class="station-num">9</div>
+      <h2>값없이 오라는 초대와 새 하늘과 새 땅</h2>
+      <p>55장에서 하나님은 <b>돈이 없는 사람도 오라</b>고 초대하세요.</p>
+      <div class="quote">너희 모든 목마른 사람들아, 어서 물로 나오너라. 돈이 없는 사람도 오너라. 너희는 와서 사서 먹되, 돈도 내지 말고 값도 지불하지 말고 포도주와 젖을 사거라.<small>이사야 55:1 (새번역)</small></div>
+      <p>그리고 책의 끝으로 가면 이런 그림이 나와요.</p>
+      <div class="quote">“보아라, 내가 새 하늘과 새 땅을 창조할 것이니, 이전 것들은 기억되거나 마음에 떠오르거나 하지 않을 것이다. … 그 안에서 다시는 울음 소리와 울부짖는 소리가 들리지 않을 것이다.”<small>이사야 65:17, 19 (새번역)</small></div>
+      <div class="quote">이리와 어린 양이 함께 풀을 먹으며, 사자가 소처럼 여물을 먹으며, 뱀이 흙을 먹이로 삼을 것이다.<small>이사야 65:25 (새번역)</small></div>
+      <p>마지막 장에서 하나님은 어떤 사람을 좋아하신다고 하실까요?</p>
+      <div class="quote">“나의 손이 이 모든 것을 지었으며, 이 모든 것이 나의 것이다. 겸손한 사람, 회개하는 사람, 나를 경외하고 복종하는 사람, 바로 이런 사람을 내가 좋아한다.”<small>이사야 66:2 (새번역)</small></div>
+      <p class="ask">울음 소리가 사라진 세상에서 내가 가장 먼저 보고 싶은 장면은 뭘까요?</p>
+      <details class="deep"><summary>🔍 중고등학생 더 깊이</summary><p>이사야 66장의 마지막 절(24절)은 무거운 장면으로 끝나요. 그래서 66장은 앞에 나온 위로와 함께 읽어야 해요. 읽다가 마음이 무거워지거나 궁금한 점이 생기면 혼자 끙끙대지 말고 선생님이나 부모님과 이야기해 봐요.</p></details>
+    </div>
+
+  </div>
+
+  <div class="key-verse" style="margin:0 0 40px;">
+    <blockquote>“너희는 위로하여라! 나의 백성을 위로하여라!”</blockquote>
+    <cite>이사야 40:1 (새번역)</cite>
+    <p class="key-question">하나님께 먼저 위로받은 나는, 오늘 누구에게 위로를 전해 줄까요?</p>
+  </div>
+
+  <section class="range">
+    <div class="qtag">매일 탐험 지도 · 11월 26일~12월 31일</div>
+    <h2>서른여섯 번의 새벽 탐험</h2>
+    <p class="lead">읽기 전에 ‘오늘의 탐험 질문’을 먼저 생각하고, 읽은 뒤에 답을 찾아봐요. 정답이 하나가 아닌 질문도 많아요.</p>
+    <p class="lead" style="margin-bottom:10px">맨 오른쪽 「읽기」를 누르면 시 형식(행 구분)으로 읽는 데 도움이 되는 대한성서공회 새한글성경으로 연결돼요(새 창). 본문은 이 페이지에 옮겨 싣지 않았어요.</p>
+    <table class="date-table">
+      <tr><th>날짜</th><th>본문</th><th>오늘의 탐험 질문</th><th>새한글성경</th></tr>
+      <tr><td>11/26</td><td>40:1~11</td><td>‘위로하여라’는 말씀은 누구에게 하라고 하실까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.40.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>11/27</td><td>40:12~31</td><td>지쳐서 말이 없어진 이스라엘에게 하나님이 어떻게 답하실까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.40.12" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>11/28</td><td>41:1~20</td><td>‘두려워하지 말아라’ 뒤에 하나님이 덧붙이신 말은 뭘까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.41.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>11/29</td><td>41:21~29</td><td>하나님이 신들에게 “증거를 내놓아 봐라” 하시는 건 뭘까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.41.21" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>11/30</td><td>42:1~25</td><td>상한 갈대 같은 사람에게 이 종은 어떻게 할까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.42.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/1</td><td>43:1~13</td><td>“내가 너를 속량하였다” — 하나님이 이미 하신 일을 찾아봐요.</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.43.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/2</td><td>43:14~28</td><td>광야에 길을 내신다는 약속은 22절 이하의 백성 모습과 어떻게 마주 설까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.43.14" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/3</td><td>44:1~20</td><td>같은 나무로 불도 때고 신도 만드는 장면에서 뭐가 우스워질까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.44.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/4</td><td>44:21~45:7</td><td>하나님이 이름을 불러 주신 낯선 왕은 누구일까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.44.21" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/5</td><td>45:8~17</td><td>‘숨어 계신’ 하나님이 동시에 ‘구원자’라니, 어떻게 이해할까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.45.8" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/6</td><td>45:18~25</td><td>“땅 끝의 모든 사람아, 나에게로 돌아오너라”는 초대는 누구를 향할까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.45.18" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/7</td><td>46:1~13</td><td>신상과 하나님, 짐을 지는 쪽은 각각 누구일까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.46.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/8</td><td>47:1~15</td><td>높았던 바벨론이 의지하던 것들은 심판 날 어떻게 될까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.47.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/9</td><td>48:1~11</td><td>하나님이 일을 미리 말씀하신 이유를 4~5절에서 찾아봐요.</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.48.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/10</td><td>48:12~22</td><td>“네가 내 말을 들었더라면” 뒤에 무엇이 이어질까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.48.12" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/11</td><td>49:1~13</td><td>종의 사명은 어디까지 넓어질까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.49.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/12</td><td>49:14~50:3</td><td>“버리셨다”는 시온의 말에 하나님은 어떻게 대답하실까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.49.14" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/13</td><td>50:4~51:8</td><td>종이 말하기 전에 하나님이 먼저 하신 일은 뭘까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.50.4" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/14</td><td>51:9~16</td><td>“깨어나소서” 하고 부르는 쪽과 대답하는 쪽은 누구일까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.51.9" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/15</td><td>51:17~52:12</td><td>산을 넘어 달려오는 발이 전하는 ‘희소식’의 내용은 뭘까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.51.17" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/16</td><td>52:13~53:12</td><td>노래 속 ‘우리’는 무엇을 깨닫고 있을까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.52.13" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/17</td><td>54:1~17</td><td>산이 옮겨져도 변하지 않는다고 하신 건 뭘까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.54.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/18</td><td>55:1~13</td><td>초대받는 사람의 조건은 뭘까? (힌트: 돈?)</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.55.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/19</td><td>56:1~8</td><td>하나님의 집에 환영받는 사람 목록에는 누가 들어 있을까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.56.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/20</td><td>56:9~57:13</td><td>파수꾼들이 제 일을 못 하는 모습은 어떻게 그려질까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.56.9" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/21</td><td>57:14~21</td><td>높고 거룩하신 하나님이 계시는 두 곳은 어디일까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.57.14" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/22</td><td>58:1~14</td><td>하나님이 기뻐하시는 금식은 어떤 모양일까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.58.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/23</td><td>59:1~21</td><td>구원할 사람이 없는 걸 보시고 하나님이 하신 일은 뭘까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.59.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/24</td><td>60:1~22</td><td>사람들은 무엇을 보고 모여들까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.60.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/25</td><td>61:1~11</td><td>성탄절! 이 말씀을 전하는 이가 하는 일을 모두 찾아봐요.</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.61.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/26</td><td>62:1~12</td><td>‘버림받은 자’라고 불리던 곳이 얻는 새 이름은 뭘까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.62.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/27</td><td>63:1~14</td><td>백성이 고난 받을 때 하나님이 하셨다는 일은 뭘까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.63.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/28</td><td>63:15~64:12</td><td>기도하는 사람은 자신을 하나님 앞에서 뭐라고 부를까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.63.15" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/29</td><td>65:1~16</td><td>하나님이 “내가 여기 있다” 하신 상대는 누구일까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.65.1" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/30</td><td>65:17~25</td><td>새 예루살렘에서 어린아이와 노인과 짐승은 어떻게 나올까?</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.65.17" target="_blank" rel="noopener">읽기</a></td></tr>
+      <tr><td>12/31</td><td>66:1~24</td><td>하나님이 돌보시겠다는 사람의 모습은 어떤 걸까? 책의 마지막 장면도 천천히 읽어요.</td><td><a href="https://bible.bskorea.or.kr/bible/NKT/ISA.66.1" target="_blank" rel="noopener">읽기</a></td></tr>
+    </table>
+    <div class="quote">보아라, 예루살렘아, 내가 네 이름을 내 손바닥에 새겼고, 네 성벽을 늘 지켜 보고 있다.<small>이사야 49:16 (새번역) — 위로의 책 한가운데서</small></div>
+  </section>
+
+  <section class="questions">
+    <div class="qtag">O X 퀴즈</div>
+    <h2>얼마나 탐험했나 확인해 봐요</h2>
+    <p class="lead">문제를 읽고 O인지 X인지 먼저 생각한 뒤, 눌러서 정답을 확인해요.</p>
+    <details class="ans"><summary>① 이사야 40장은 “너희는 위로하여라!”로 시작한다.</summary><p>O! (40:1)</p></details>
+    <details class="ans"><summary>② 하나님은 이스라엘 사람이 아닌 고레스 왕의 이름도 부르신다.</summary><p>O! (44:28; 45:1)</p></details>
+    <details class="ans"><summary>③ 시온이 “주님께서 나를 잊으셨다”고 하자, 하나님은 “맞다, 잊었다”고 하셨다.</summary><p>X! “나는 절대로 너를 잊지 않겠다. 내가 네 이름을 내 손바닥에 새겼다”고 하셨어요 (49:14~16).</p></details>
+    <details class="ans"><summary>④ 46장에서는 신들이 짐승에게 실려 가고, 하나님은 백성을 안고 다니신다.</summary><p>O! (46:1~4)</p></details>
+    <details class="ans"><summary>⑤ 55장에서 하나님은 돈을 낸 사람만 와서 먹고 마시라고 하신다.</summary><p>X! 돈이 없는 사람도 오라고, 값도 지불하지 말라고 하셨어요 (55:1).</p></details>
+    <details class="ans"><summary>⑥ ‘종의 노래’의 종이 누구인지는 모든 사람이 똑같이 읽는다.</summary><p>X! 이스라엘을 가리킨다고 읽는 사람도, 한 사람을 가리킨다고 읽는 사람도 있어요. 그래서 이번 탐험에서는 본문이 그리는 모습을 따라가요.</p></details>
+
+    <div class="also">
+      <p class="lead">다 읽은 뒤에 이 세 가지를 생각해 봐요</p>
+      <ol>
+        <li>오늘 본문은 누구에게 한 말씀이었나요?</li>
+        <li>오늘 본문에서 하나님은 어떤 분으로 나왔나요?</li>
+        <li>내가 받은 위로를 오늘 누구에게 흘려보낼 수 있을까요?</li>
+      </ol>
+    </div>
+  </section>
+
+  <a class="backlink" href="%EC%9D%B4%EC%82%AC%EC%95%BC%EB%8F%99%ED%96%89.html">어른용 이사야 40~66장 동행 보러 가기 →</a>
+
+  <footer>
+    <p class="sched">이 페이지의 성경 본문은 표준새번역입니다. 교회학교 중고등부 설교문도 표준새번역으로 매일 함께 나가요.</p>
+    <p class="signoff">위로하시는 하나님 품 안에서 함께 걷기를 구하며,
+      <span class="church"><img src="assets/PCK_Logo.png" alt="대한예수교장로회(통합) 교단 마크">순천서남교회 말씀공동체</span>
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
